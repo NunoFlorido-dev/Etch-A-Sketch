@@ -19,7 +19,7 @@ body{
 }
 .gridContainer{
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
 }
 
 .buttonContainer{
@@ -28,6 +28,7 @@ body{
   justify-content: center;
 }
 
-.button{
+button{
   border-radius: 5px;
+  margin: 1rem;
 }

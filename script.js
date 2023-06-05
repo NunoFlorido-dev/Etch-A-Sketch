@@ -1,6 +1,14 @@
 const container = document.querySelector('.gridContainer');
 const buttonReset = document.querySelector('.button');
 
+let mode = 1;
+
+function randomInteger(){
+  let r = randomInteger(255);
+  let g = randomInteger(255);
+  let b = randomInteger(255);
+  return [r , g, b];
+}
 
 const createGrid = (amtOfGrids) => {
   const wrapper = document.createElement('div');
