@@ -1,14 +1,14 @@
 const container = document.querySelector('.gridContainer');
 const buttonReset = document.querySelector('.button');
+const buttonMode = document.querySelector('.buttonMode');
+
 
 let mode = 1;
 
-function randomInteger(){
-  let r = randomInteger(255);
-  let g = randomInteger(255);
-  let b = randomInteger(255);
-  return [r , g, b];
+function randomInteger(max) {
+  return Math.floor(Math.random() * (max + 1));
 }
+
 
 const createGrid = (amtOfGrids) => {
   const wrapper = document.createElement('div');
@@ -26,7 +26,14 @@ const createGrid = (amtOfGrids) => {
       gridBox.style.height = `${widthAndHeight}px`;
       //adding mouseenter event listener for coloring the grid
       gridBox.addEventListener('mouseenter', () => {
-        gridBox.style.backgroundColor = 'black';
+        if (mode == 1) {
+          gridBox.style.backgroundColor = 'black';
+        } else if (mode == 2) {
+          const randomR = randomInteger(255);
+          const randomG = randomInteger(255);
+          const randomB = randomInteger(255);
+          gridBox.style.backgroundColor = `rgb(${randomR}, ${randomG}, ${randomB})`;;
+        }
       })
       row.appendChild(gridBox);
     }
@@ -56,3 +63,12 @@ buttonReset.addEventListener('click', () => {
 
 })
 
+
+buttonMode.addEventListener('click', () => {
+  if (mode == 1) {
+    mode = 2;
+  } else {
+    mode = 1;
+  }
+}
+)
