@@ -11,7 +11,7 @@ const createGrid = (amtOfGrids) => {
     row.classList.add('grid-row');
 
     for (let j = 0; j < amtOfGrids; j++) {
-      const widthAndHeight = 960 / amtOfGrids;
+      const widthAndHeight = 400 / amtOfGrids;
       const gridBox = document.createElement('div');
       gridBox.classList.add('grid-box');
       gridBox.style.width = `${widthAndHeight}px`;
@@ -27,6 +27,9 @@ const createGrid = (amtOfGrids) => {
   }
   container.appendChild(wrapper);
 }
+
+const userSizeFirst = 10;
+createGrid(userSizeFirst);
 
 buttonReset.addEventListener('click', () => {
   let userSize = Number(prompt('Enter the size of the grid'));

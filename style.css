@@ -3,10 +3,31 @@
 ::after{
   box-sizing: border-box;
 }
+body{
+  font-family: 'LilGrotesk', sans-serif;
+}
+.gameName{
+  display: flex;
+  justify-content: center;
+}
 .grid-row{
   display: flex;
 }
 .grid-box{
   border: 1px solid black;
   background-color: #f8f8ff;
+}
+.gridContainer{
+  display: flex;
+  justify-content: center;
+}
+
+.buttonContainer{
+  padding: 3%;
+  display: flex;
+  justify-content: center;
+}
+
+.button{
+  border-radius: 5px;
 }
